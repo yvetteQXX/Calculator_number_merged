@@ -115,7 +115,7 @@ void Calculator::button_num_clicked(QString number)
 	S += s;
 	char*  ch;
 	QByteArray ba = s.toLatin1();
-	ch = ba.data();//QString×ª»»³Échar
+	ch = ba.data();//QString
 	int num = *ch - '0';
 	lineEditor->setText(S);
 	if (mark == 1){
@@ -138,38 +138,42 @@ void Calculator::button_num_clicked(QString number)
 
 void Calculator::button_add_clicked()
 {
-	S += "+";
+	S = "+";
 	mathsymbol = '+';
 	lineEditor->setText(S);
 	symbol = true;
 	mark = 2;
+	S = "";
 }
 
 void Calculator::button_minus_clicked()
 {
-	S += "-";
+	S = "-";
 	mathsymbol = '-';
 	lineEditor->setText(S);
 	symbol = true;
 	mark = 2;
+	S = "";
 }
 
 void Calculator::button_divide_clicked()
 {
-	S += "/";
+	S = "/";
 	mathsymbol = '/';
 	lineEditor->setText(S);
 	symbol = true;
 	mark = 2;
+	S = "";
 }
 
 void Calculator::button_multiplay_clicked()
 {
-	S += "*";
+	S = "*";
 	mathsymbol = '*';
 	lineEditor->setText(S);
 	symbol = true;
 	mark = 2;
+	S = "";
 }
 
 //void Calculator::button_calcu_clicked(QString Mathsymbol)
@@ -188,7 +192,7 @@ void Calculator::button_multiplay_clicked()
 
 void Calculator::button_getanswer_clicked()
 {
-	S += "=";
+	S = "";
 	switch (mathsymbol)
 	{
 	case '+': ans = num1 + num2; break;
